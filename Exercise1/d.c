@@ -18,27 +18,27 @@ int main()
 
   fp = fopen("f2.txt", "r");
 
-  //int key = 0, flag = 1;
-  //printf("Enter the roll number you are looking for: ");
-  //scanf("%d", &key);
+  int key = 0, flag = 1;
+  printf("Enter the roll number you are looking for: ");
+  scanf("%d", &key);
 
   clock_t begin = clock();
   int count = 0;
   while (1)
   {
-    //if (stud.rollno == key)
-    //{
+    if (stud.rollno == key)
+    {
     
     printf("Rollno = %d    Name = %s    Age = %d    Branch = %s\n", stud.rollno, stud.name, stud.age, stud.branch);
-    //flag = 0;
-    //break;
-    //}
+    flag = 0;
+    break;
+    }
   }
   
-  //if (flag)
-  //{
-    //printf("Not present");
-  //}
+  if (flag)
+  {
+    printf("Not present");
+  }
 
   clock_t end = clock();
 

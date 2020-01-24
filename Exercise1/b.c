@@ -55,7 +55,7 @@ void merge(FILE **files, char *p[])
     struct Student stud[2];
     int flag1 = 0, flag2 = 0;
 
-    FILE **temp = malloc(sizeof(FILE *) * (9));
+    FILE **temp = malloc(sizeof(FILE *) * (10));
     char *q[10] = {"1.txt", "s.txt", "s3.txt", "s4.txt", "s5.txt", "s6.txt", "s7.txt", "s8.txt", "s9.txt", "f1s.txt"};
 
     for (int i = 1; i < 10; i++)
