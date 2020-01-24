@@ -24,11 +24,10 @@ int main()
 
   clock_t begin = clock();
   int count = 0;
-  while (1)
+  while (fread(&stud,sizeof(struct Student),1,fp))
   {
     if (stud.rollno == key)
     {
-    
     printf("Rollno = %d    Name = %s    Age = %d    Branch = %s\n", stud.rollno, stud.name, stud.age, stud.branch);
     flag = 0;
     break;
