@@ -56,7 +56,7 @@ void merge(FILE **files, char *p[])
     int flag1 = 0, flag2 = 0;
 
     FILE **temp = malloc(sizeof(FILE *) * (10));
-    char *q[10] = {"1.txt", "s.txt", "s3.txt", "s4.txt", "s5.txt", "s6.txt", "s7.txt", "s8.txt", "s9.txt", "f1s.txt"};
+    char *q[10] = {"1.txt", "s.txt", "s3.txt", "s4.txt", "s5.txt", "s6.txt", "s7.txt", "s8.txt", "s9.txt", "f2s.txt"};
 
     for (int i = 1; i < 10; i++)
     {
@@ -148,7 +148,7 @@ int main()
 
     char *p[10] = {"1.txt", "2.txt", "3.txt", "4.txt", "5.txt", "6.txt", "7.txt", "8.txt", "9.txt", "10.txt"};
 
-    fp = fopen("f1.txt", "r");
+    fp = fopen("f2.txt", "r");
 
     clock_t begin = clock();
 
