@@ -14,7 +14,7 @@ struct Student
 void fileGen(FILE *fp, FILE **files, char *p[])
 {
     int t = 1000000;
-    int w = t / 1;
+    int w = t / 10;
     int i = 0, j = 0;
 
     struct Student student;
