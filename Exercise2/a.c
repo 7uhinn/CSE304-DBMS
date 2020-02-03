@@ -12,11 +12,11 @@ struct Student
 
 struct IndFile
 {
-    int rollno;
-    int offset;
+  int rollno;
+  int offset;
 };
 
-int generation(char *s,int len)
+int generation(char *s, int len)
 {
   char alphanum[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
@@ -30,7 +30,7 @@ int generation(char *s,int len)
 
 int main()
 {
-  FILE *f1,*f2;
+  FILE *f1, *f2;
   struct Student data;
   struct IndFile ind;
 
@@ -38,17 +38,17 @@ int main()
   f2 = fopen("index.txt", "w");
 
   int n = 1000000;
-  
+
   printf("Generating file...");
 
-  for(int i=0; i<n; i++)
+  for (int i = 0; i < n; i++)
   {
-    generation(data.name,5);
+    generation(data.name, 5);
     data.rollno = (rand() % (1000000));
     ind.rollno = data.rollno;
     ind.offset = i;
     data.age = (rand() % (50));
-    strcpy(data.branch,"CSE");
+    strcpy(data.branch, "CSE");
     fwrite(&data, sizeof(struct Student), 1, f1);
     fwrite(&ind, sizeof(struct IndFile), 1, f2);
   }
