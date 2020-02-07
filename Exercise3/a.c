@@ -37,7 +37,7 @@ int main()
 
     f1 = fopen("data.txt", "w");
 
-    int n = 1000000;
+    int n = 20;
 
     printf("Generating file...");
     for (int i = 0; i < n; i++)
