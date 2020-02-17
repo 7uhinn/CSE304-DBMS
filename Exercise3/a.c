@@ -34,15 +34,15 @@ int main()
 {
     FILE *f1, *f2;
     struct Student stud;
-    struct Index ind[20];
-    int roll[20];
+    struct Index ind[30];
+    int roll[30];
     int temp;
     int f = 0, k = 0, s = 0, m = 0, z = 0;
 
     f1 = fopen("data.txt", "w");
     f2 = fopen("index.txt", "w");
 
-    int n = 20;
+    int n = 30;
 
     printf("Generating file...\n");
     for (int i = 0; i < n; i++)
@@ -53,7 +53,7 @@ int main()
 
         while (s == 0)
         {
-            temp = (rand() % (100));
+            temp = (rand() % (1000));
             for (int j = 0; j < sizeof(roll); j++)
             {
                 if (temp == roll[j])
