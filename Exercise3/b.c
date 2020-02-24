@@ -80,13 +80,12 @@ int main()
             fclose(f2);
         }
 
-        if (ex == 2)
+        else if (ex == 2)
         {
             f2 = fopen("index.txt", "r");
 
             fseek(f2, 0, SEEK_END);
             int f = (int)(ftell(f2) / sizeof(struct Index));
-            printf("%d", f);
 
             struct Index ind[f];
 
@@ -155,24 +154,56 @@ int main()
             ind[f].rc = -1;
             ind[f].offset = f;
 
-            //Uncomment to show all records in index file
-            /*printf(".....................................................................\n");
+            printf(".....................................................................\n");
             for (int i = 0; i < f + 1; i++)
             {
                 printf("Rollno = %d    LC = %d    RC = %d    Offset = %d\n", ind[i].rollno, ind[i].lc, ind[i].rc, ind[i].offset);
                 fwrite(&ind[i], sizeof(struct Index), 1, f2);
-            }*/
+            }
 
-            printf("Record added successfully.");
+            printf("Record added successfully.\n");
             printf(".....................................................................\n");
 
             fclose(f1);
             fclose(f2);
         }
 
-        if (ex == 0)
+        else if(ex == 3){
+            f2 = fopen("index.txt", "r");
+            f1 = fopen("data.txt", "r");
+
+            fseek(f2, 0, SEEK_END);
+            int f = (int)(ftell(f2) / sizeof(struct Index));
+
+            struct Index ind[f];
+            struct Student stud[f];
+
+            fseek(f2, 0, SEEK_SET);
+
+            for (int i = 0; i < f; i++)
+            {
+                fread(&ind[i], sizeof(struct Index), 1, f2);
+            }
+            fclose(f2);
+
+            for (int i = 0; i < f; i++)
+            {
+                fread(&stud[i], sizeof(struct Student), 1, f1);
+            }
+            fclose(f1);
+
+            f1 = fopen("data.txt", "w");
+            f2 = fopen("index.txt", "w");
+
+        }
+
+        else if (ex == 0)
         {
             exit(0);
+        }
+
+        else{
+            printf("Invalid Choice.\n\n");
         }
     }
 }
