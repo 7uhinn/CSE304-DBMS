@@ -176,7 +176,8 @@ int main()
 
         else if (ex == 3)
         {
-            f2 = fopen("index.txt", "r");
+            FILE *f3;
+            f3 = fopen("index.txt", "r");
 
             int t = 0, z = 0, m = 0;
 
@@ -187,21 +188,21 @@ int main()
 
             struct Index id;
 
-            printf("9");
+            printf("%d", 9);
 
             while (flag == 1 && o != -1)
             {
-                printf("0");
-                fseek(f2, o * sizeof(struct Index), SEEK_SET);
-                fread(&id, sizeof(struct Index), 1, f2);
+                printf("%d", 0);
+                fseek(f3, o * sizeof(struct Index), SEEK_SET);
+                fread(&id, sizeof(struct Index), 1, f3);
                 if (id.rollno < k)
                 {
-                    printf("1");
+                    printf("%d", 1);
                     o = id.rc;
                 }
                 else if (id.rollno > k)
                 {
-                    printf("2");
+                    printf("%d", 2);
                     o = id.lc;
                     printf("%d", o);
                 }
@@ -216,14 +217,15 @@ int main()
             if (flag)
             {
                 printf("\nNot present \n");
+                fclose(f3);
             }
 
             if (flag == 0)
             {
-                fseek(f2, 0, SEEK_END);
-                int f = (int)(ftell(f2) / sizeof(struct Index));
+                fseek(f3, 0, SEEK_END);
+                int f = (int)(ftell(f3) / sizeof(struct Index));
 
-                fclose(f2);
+                fclose(f3);
 
                 f1 = fopen("data.txt", "r");
 
@@ -343,10 +345,10 @@ int main()
                     printf("Rollno = %d    LC = %d    RC = %d    Offset = %d\n", ind[i].rollno, ind[i].lc, ind[i].rc, ind[i].offset);
                     fwrite(&ind[i], sizeof(struct Index), 1, f2);
                 }
-            }
 
-            fclose(f2);
-            fclose(f1);
+                fclose(f1);
+                fclose(f2);
+            }
         }
 
         else if (ex == 0)
