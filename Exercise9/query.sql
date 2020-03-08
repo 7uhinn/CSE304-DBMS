@@ -70,14 +70,14 @@ INSERT INTO Catalog
     (sid,pid,cost)
 VALUES
     (1, 4, 200),
-    (2, 3, 100),
+    (2, 3, 80),
     (3, 3, 100),
     (3, 5, 700),
     (4, 2, 900),
-    (5, 1, 1100),
+    (5, 1, 400),
     (1, 8, 2000),
-    (3, 8, 2000),
-    (1, 10, 1200),
+    (3, 8, 1500),
+    (1, 10, 1300),
     (3, 10, 1200),
     (2, 7, 700),
     (4, 6, 500),
@@ -149,5 +149,26 @@ FROM(
 WHERE X.SuppliersRedPartsCount = Y.RedPartsCount;
 
 -- g
+SELECT X.color, COUNT(DISTINCT X.sid) as NumberOfSuppliers
+FROM (
+    SELECT P.color, C.sid
+    FROM Parts as P, Catalog as C
+    WHERE P.pid = C.pid
+) as X
+GROUP BY X.color;
 
+-- h
+SELECT C.pid, C.sid, C.cost
+FROM(
+    SELECT pid, MIN(cost) as MinCost
+    FROM Catalog
+    GROUP BY pid
+) as X,
+    (
+    SELECT pid
+    FROM Parts
+    WHERE color = 'red'
+) as Y, Catalog as C
+WHERE X.pid = Y.pid and C.cost = X.MinCost and Y.pid = C.pid;
 
+-- i
