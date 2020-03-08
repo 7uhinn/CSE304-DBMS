@@ -69,26 +69,26 @@ FROM Parts;
 INSERT INTO Catalog
     (sid,pid,cost)
 VALUES
-    (1, 4, 200),
-    (2, 3, 80),
-    (3, 3, 100),
-    (3, 5, 700),
-    (4, 2, 900),
-    (5, 1, 400),
-    (1, 8, 2000),
-    (3, 8, 1500),
-    (1, 10, 1300),
-    (3, 10, 1200),
-    (2, 7, 700),
-    (4, 6, 500),
-    (5, 9, 1400),
-    (1, 3, 100),
-    (1, 5, 700),
-    (1, 2, 900),
-    (1, 1, 1100),
-    (1, 7, 700),
-    (1, 6, 500),
-    (1, 9, 1400);
+    (1, 4, 250),
+    (2, 3, 85),
+    (3, 3, 105),
+    (3, 5, 733),
+    (4, 2, 912),
+    (5, 1, 436),
+    (1, 8, 2122),
+    (3, 8, 1543),
+    (1, 10, 1322),
+    (3, 10, 1222),
+    (2, 7, 2222),
+    (4, 6, 599),
+    (4, 9, 1423),
+    (1, 3, 121),
+    (1, 5, 699),
+    (1, 2, 899),
+    (1, 1, 1122),
+    (1, 7, 783),
+    (1, 6, 510),
+    (1, 9, 1423);
 
 
 SELECT *
@@ -169,6 +169,43 @@ FROM(
     FROM Parts
     WHERE color = 'red'
 ) as Y, Catalog as C
-WHERE X.pid = Y.pid and C.cost = X.MinCost and Y.pid = C.pid;
+WHERE X.pid = Y.pid and C.cost = X.MinCost and Y.pid = C.pid
+ORDER BY C.pid;
 
 -- i
+SELECT C.pid, C.sid, C.cost
+FROM(
+    SELECT pid, MIN(cost) as MinCost
+    FROM Catalog
+    GROUP BY pid
+) as X, Catalog as C
+WHERE C.cost = X.MinCost
+ORDER BY C.pid;
+
+-- j
+SELECT S.sname, X.NumberOfParts
+FROM(
+    SELECT C.sid, COUNT(C.sid) as NumberOfParts
+    FROM Catalog as C
+    GROUP BY C.sid
+) as X, Suppliers as S
+WHERE S.sid = X.sid
+ORDER BY X.NumberOfParts;
+
+-- k
+SELECT S.sname, S.sid, X.MaxCost
+FROM (
+    SELECT MAX(cost) as MaxCost
+    FROM Catalog
+) as X, Suppliers as S, Catalog as C
+WHERE S.sid = C.sid and C.cost = X.MaxCost;
+
+-- l
+SELECT S.sname, X.NumberOfParts
+FROM(
+    SELECT C.sid, COUNT(C.sid) as NumberOfParts
+    FROM Catalog as C
+    GROUP BY C.sid
+) as X, Suppliers as S
+WHERE S.sid = X.sid and X.NumberOfParts > 1
+ORDER BY X.NumberOfParts;
