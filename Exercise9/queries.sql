@@ -83,7 +83,7 @@ FROM(
     FROM Catalog
     GROUP BY pid
 ) as X, Catalog as C
-WHERE C.cost = X.MinCost
+WHERE C.cost = X.MinCost and C.pid = X.pid
 ORDER BY C.pid;
 
 -- j
@@ -113,3 +113,8 @@ FROM(
 ) as X, Suppliers as S
 WHERE S.sid = X.sid and X.NumberOfParts > 1
 ORDER BY X.NumberOfParts;
+
+-- trial
+SELECT pid, MIN(cost) as MinCost
+FROM Catalog
+GROUP BY pid;
