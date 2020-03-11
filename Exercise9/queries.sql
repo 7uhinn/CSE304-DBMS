@@ -113,8 +113,3 @@ FROM(
 ) as X, Suppliers as S
 WHERE S.sid = X.sid and X.NumberOfParts > 1
 ORDER BY X.NumberOfParts;
-
--- trial
-SELECT pid, MIN(cost) as MinCost
-FROM Catalog
-GROUP BY pid;
