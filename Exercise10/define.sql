@@ -19,7 +19,7 @@ CREATE TABLE Employee
 
 CREATE TABLE Department
 (
-    DName varchar(15),
+    Dname varchar(15),
     Dnumber int,
     Mgr_ssn int,
     Mgr_start_date date,
