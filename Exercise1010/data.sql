@@ -1,3 +1,14 @@
+INSERT INTO Department
+    (Dname,Dnumber,Mgr_Ssn,Mgr_start_date)
+VALUES
+    ('Research', 5, 333445555, '1978-05-22'),
+    ('Administration', 4, 987654321, '1985-01-01'),
+    ('Headquarters', 1, 888665555, '1971-06-19');
+
+SELECT *
+FROM Department;
+
+
 INSERT INTO Employee
     (Fname,Minit,Lname,Ssn,Bdate,Address,Sex,Salary,Super_ssn,Dno)
 VALUES
@@ -12,17 +23,6 @@ VALUES
 
 SELECT *
 FROM Employee;
-
-
-INSERT INTO Department
-    (Dname,Dnumber,Mgr_Ssn,Mgr_start_date)
-VALUES
-    ('Research', 5, 333445555, '1978-05-22'),
-    ('Administration', 4, 987654321, '1985-01-01'),
-    ('Headquarters', 1, 888665555, '1971-06-19');
-
-SELECT *
-FROM Department;
 
 
 INSERT INTO Dept_Locations

@@ -2,6 +2,15 @@ CREATE DATABASE ex10;
 
 USE ex10;
 
+CREATE TABLE Department
+(
+    Dname varchar(15),
+    Dnumber int,
+    Mgr_ssn int,
+    Mgr_start_date date,
+    PRIMARY KEY(Dnumber)
+);
+
 CREATE TABLE Employee
 (
     Fname varchar(10),
@@ -14,16 +23,8 @@ CREATE TABLE Employee
     Salary int,
     Super_ssn int,
     Dno int,
-    PRIMARY KEY(Ssn)
-);
-
-CREATE TABLE Department
-(
-    Dname varchar(15),
-    Dnumber int,
-    Mgr_ssn int,
-    Mgr_start_date date,
-    PRIMARY KEY(Dnumber)
+    PRIMARY KEY(Ssn),
+    FOREIGN KEY(Dno) REFERENCES Department(Dnumber)
 );
 
 CREATE TABLE Dept_Locations
@@ -31,7 +32,7 @@ CREATE TABLE Dept_Locations
     Dnumber int,
     Dlocation varchar(10),
     PRIMARY KEY(Dnumber,Dlocation),
-    FOREIGN KEY(DNUMBER) REFERENCES Department(Dnumber)
+    FOREIGN KEY(Dnumber) REFERENCES Department(Dnumber)
 );
 
 CREATE TABLE Project
