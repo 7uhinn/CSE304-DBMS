@@ -22,7 +22,7 @@ CREATE TABLE Employee
     Sex char(1),
     Salary int,
     Super_ssn int,
-    Dno int,
+    Dno int not NULL,
     PRIMARY KEY(Ssn),
     FOREIGN KEY(Dno) REFERENCES Department(Dnumber)
 );
