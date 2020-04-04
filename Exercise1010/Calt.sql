@@ -1,7 +1,7 @@
 INSERT INTO Employee
     (Fname,Minit,Lname,Ssn,Bdate,Address,Sex,Salary,Super_ssn,Dno)
 VALUES
-    ('Jake', 'B', 'Peralta', 281198123, '1956-01-09', '731 Baxton, Austin, TX', 'M', 40000, NULL, NULL);
+    ('Jake', 'R', 'Peralta', 281198123, '1956-01-09', '731 Baxton, Austin, TX', 'M', 40000, NULL, NULL);
 
 INSERT INTO Department
     (Dname,Dnumber,Mgr_Ssn,Mgr_start_date)
@@ -11,7 +11,7 @@ VALUES
 INSERT INTO Employee
     (Fname,Minit,Lname,Ssn,Bdate,Address,Sex,Salary,Super_ssn,Dno)
 VALUES
-    ('Jake', 'B', 'Peralta', 281198123, '1956-01-09', '731 Baxton, Austin, TX', 'M', 40000, NULL, 2);
+    ('Jake', 'R', 'Peralta', 281198123, '1956-01-09', '731 Baxton, Austin, TX', 'M', 40000, NULL, 2);
 
 -----------------------
 
@@ -23,4 +23,4 @@ VALUES
 INSERT INTO Employee
     (Fname,Minit,Lname,Ssn,Bdate,Address,Sex,Salary,Super_ssn,Dno)
 VALUES
-    ('Jake', 'B', 'Peralta', 281198123, '1956-01-09', '731 Baxton, Austin, TX', 'M', 40000, NULL, 2);
+    ('Jake', 'R', 'Peralta', 281198123, '1956-01-09', '731 Baxton, Austin, TX', 'M', 40000, NULL, 2);

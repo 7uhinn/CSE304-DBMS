@@ -11,5 +11,4 @@ BEGIN
         ('Jake', 'B', 'Peralta', 281198123, '1956-01-09', '731 Baxton, Austin, TX', 'M', 40000, NULL, 2);
 
     COMMIT;
-
 END;
