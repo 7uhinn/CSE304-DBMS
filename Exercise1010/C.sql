@@ -1,5 +1,4 @@
 BEGIN
-
     INSERT INTO Department
         (Dname,Dnumber,Mgr_Ssn,Mgr_start_date)
     VALUES
