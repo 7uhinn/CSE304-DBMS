@@ -1,6 +1,6 @@
 CREATE TABLE PC
 (
-    model varchar(10),
+    model int,
     speed int,
     ram int,
     hd int,
@@ -10,7 +10,7 @@ CREATE TABLE PC
 
 CREATE TABLE Laptop
 (
-    model varchar(10),
+    model int,
     speed int,
     ram int,
     hd int,
@@ -21,9 +21,9 @@ CREATE TABLE Laptop
 
 CREATE TABLE Printer
 (
-    model varchar(10),
+    model varchar(10) not null,
     color varchar(10),
     type int,
     price int,
-    PRIMARY KEY(model)
+    PRIMARY KEY(type)
 );

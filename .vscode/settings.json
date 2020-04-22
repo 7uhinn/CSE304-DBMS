@@ -1,0 +1,13 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "ex10",
+            "dialect": "MySQL",
+            "name": "DBMS",
+            "password": "1204",
+            "port": 3306,
+            "server": "localhost",
+            "username": "root"
+        }
+    ]
+}

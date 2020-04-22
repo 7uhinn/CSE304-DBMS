@@ -1,7 +1,3 @@
-CREATE DATABASE ex11;
-
-USE ex11;
-
 CREATE TABLE Instructor
 (
     ID int,
