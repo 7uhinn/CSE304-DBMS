@@ -65,12 +65,3 @@ delimiter ;
 update Laptop
 set price = 200
 where model = 101;
-
-
-
-
-
-	
-
-
-		
