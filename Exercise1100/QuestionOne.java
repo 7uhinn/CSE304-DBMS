@@ -44,25 +44,28 @@ public class QuestionOne {
 
             for (int i = 1; i < 21; i = i + 1) {
                 String eno = Integer.toString(i);
-                String ename = "'"+Character.toString((char)(i+64))+"'";
-                String eage = Integer.toString(i*10);
-                String esalary = Integer.toString(i*10000);
-                String departno = Integer.toString(i%3+1);
-                String ins1 = "insert into emp"+"(eno,ename,eage,esalary,departno,supereno)"+"values("+eno+","+ename+","+eage+","+esalary+","+departno+",null)";
+                String ename = "'" + Character.toString((char) (i + 64)) + "'";
+                String eage = Integer.toString(i * 10);
+                String esalary = Integer.toString(i * 10000);
+                String departno = Integer.toString(i % 3 + 1);
+                String ins1 = "insert into emp" + "(eno,ename,eage,esalary,departno,supereno)" + "values(" + eno + ","
+                        + ename + "," + eage + "," + esalary + "," + departno + ",null)";
                 stmt.executeUpdate(ins1);
 
                 String depno = Integer.toString(i);
-                String depname = "'"+Character.toString((char)(i+64))+"Dep'";
-                String depage = Integer.toString(i*10);
-                String ins2 = "insert into dep"+"(depno,depname,depage,eno)"+"values("+depno+","+depname+","+depage+","+eno+")";
+                String depname = "'" + Character.toString((char) (i + 64)) + "Dep'";
+                String depage = Integer.toString(i * 10);
+                String ins2 = "insert into dep" + "(depno,depname,depage,eno)" + "values(" + depno + "," + depname + ","
+                        + depage + "," + eno + ")";
                 stmt.executeUpdate(ins2);
             }
 
-            for(int i=1;i<4;i=i+1){
+            for (int i = 1; i < 4; i = i + 1) {
                 String departno = Integer.toString(i);
-                String[] departname = {"'Research'","'Admin'","'Sales'"};
-                String[] location = {"'Chennai'","'Delhi'","'Mumbai'"};
-                String ins3 = "insert into depart"+"(departno,departname,location)"+"values("+departno+","+departname[i-1]+","+location[i-1]+")";
+                String[] departname = { "'Research'", "'Admin'", "'Sales'" };
+                String[] location = { "'Chennai'", "'Delhi'", "'Mumbai'" };
+                String ins3 = "insert into depart" + "(departno,departname,location)" + "values(" + departno + ","
+                        + departname[i - 1] + "," + location[i - 1] + ")";
                 stmt.executeUpdate(ins3);
             }
 
