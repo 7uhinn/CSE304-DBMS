@@ -38,6 +38,10 @@ public class QuestionOne {
             stmt.executeUpdate(dep);
             stmt.executeUpdate(depart);
 
+            System.out.println("Created table in given database...");
+
+            System.out.println("Inserting values in given tables...");
+
             for (int i = 1; i < 21; i = i + 1) {
                 String eno = Integer.toString(i);
                 String ename = "'"+Character.toString((char)(i+64))+"'";
@@ -62,7 +66,8 @@ public class QuestionOne {
                 stmt.executeUpdate(ins3);
             }
 
-            System.out.println("Created table in given database...");
+            System.out.println("Values inserted in tables successfully...");
+
         } catch (SQLException se) {
             // Handle errors for JDBC
             se.printStackTrace();
