@@ -45,7 +45,7 @@ values
 insert into Printer
 	(model,color,type,price)
 values
-	('ABC','red',1,100);
+	('CDE','red',2,100);
     
 delimiter //
 
